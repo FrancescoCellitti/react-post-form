@@ -1,11 +1,11 @@
-export default function Form({formData, setFormData, handleFormData}) {
+export default function Form({formData, setFormData, handleFormData, handleSubmit}) {
     return (
         <>
             <div className="container my-4">
                 <h1>Nuovo Autore</h1>
                 <div className="card p-3">
 
-                    <form className="row g-3 needs-validation" noValidate>
+                    <form className="row g-3 needs-validation" noValidate onSubmit={handleSubmit}>
                         <div className="col-md-4">
                             <label htmlFor="validationCustom01" className="form-label">Author</label>
                             <input type="text" className="form-control" id="author" name="author"  value={formData.author} onChange={handleFormData}/>
@@ -30,15 +30,13 @@ export default function Form({formData, setFormData, handleFormData}) {
                             <label className="form-check-label" htmlFor="public"> Default checkbox </label>
                         </div>
 
-
+                        <button
+                            type="submit"
+                            className="btn btn-primary mt-2"
+                        >
+                            publish
+                        </button>
                     </form>
-                    <button
-                        type="submit"
-                        className="btn btn-primary mt-2"
-                    >
-                        publish
-                    </button>
-
 
                 </div>
             </div>
